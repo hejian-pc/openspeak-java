@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hejmls.mapper.LikeMapper">
+    <insert id="insertLikes">
+        insert into likes (article_id, user_id, like_date) values (#{articleId},#{userId},NOW());
+    </insert>
+    <delete id="delectLiked">
+        DELETE FROM likes WHERE user_id = #{userId} AND article_id = #{articleId};
+
+    </delete>
+    <select id="selectLikesbyuserId" resultType="com.hejmls.pojo.Article">
+        SELECT a.title, a.article_id, a.user_id, a.category_id, a.content, a.last_updated_date, a.publish_date
+        FROM articles a
+        WHERE a.article_id IN (SELECT article_id FROM likes WHERE user_id = #{userId});
+
+
+    </select>
+    <select id="selectLiked" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM likes WHERE user_id = #{userId} AND article_id = #{articleId}
+    </select>
+
+</mapper>
