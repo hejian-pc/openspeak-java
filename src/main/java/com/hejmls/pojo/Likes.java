@@ -14,6 +14,6 @@ public class Likes {
     private Long likeId;
     private Long articleId;
     private Long userId;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date likeDate;
 }

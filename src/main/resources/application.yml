@@ -5,6 +5,10 @@ spring:
     url: jdbc:mysql://localhost:3306/openspeak
     username: root
     password: 123456
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
 
 # MyBatis 配置
 mybatis:
@@ -13,4 +17,5 @@ mybatis:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
     # 驼峰命名自动映射
     map-underscore-to-camel-case: true
+
 
