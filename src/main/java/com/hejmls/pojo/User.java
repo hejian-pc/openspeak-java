@@ -15,7 +15,7 @@ public class User {
     private String username;
     private String password;
     private String email;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date registrationDate;
     private String otherInfo;
 }

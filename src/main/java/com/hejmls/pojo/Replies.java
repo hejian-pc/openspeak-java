@@ -15,6 +15,6 @@ public class Replies {
     private int articleId;
     private int userId;
     private String replyContent;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date replyDate;
 }
