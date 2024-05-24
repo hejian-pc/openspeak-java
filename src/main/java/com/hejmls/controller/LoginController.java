@@ -19,7 +19,7 @@ public class LoginController {
     @Autowired
     UserService userService;
     @PostMapping("/login")
-    @CrossOrigin(origins = {"http://10.16.105.65:7000", "http://localhost:7000/"})
+
     public Result login(@RequestBody User user){
 
         log.info("用户名+密码：{},{}", user.getUsername(),user.getPassword());
@@ -39,7 +39,7 @@ public class LoginController {
     }
 
     @GetMapping("/login/{username}")
-    @CrossOrigin(origins = {"http://10.16.105.65:7000", "http://localhost:7000/"})
+
     public Result selectUser(@PathVariable String username){
         User u = userService.selectUser(username);
         return Result.success(u);

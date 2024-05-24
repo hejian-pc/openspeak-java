@@ -8,7 +8,18 @@
         INSERT INTO replies (article_id, user_id, reply_content, reply_date)
         VALUES (#{articleId}, #{userId}, #{replyContent}, NOW());
     </insert>
-    <select id="selectResult" resultType="com.hejmls.pojo.Replies">
-        select * from replies where article_id = #{articleId}
+    <select id="selectResult" resultType="com.hejmls.pojo.VO.RepliesVO">
+        SELECT
+            r.*,
+            u.name
+        FROM
+            replies r
+                INNER JOIN
+            users u
+            ON
+                r.user_id = u.user_id
+        WHERE
+            r.article_id = #{articleId};
+
     </select>
 </mapper>
