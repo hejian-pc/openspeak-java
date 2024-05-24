@@ -14,7 +14,7 @@ public class HomeController {
     HomeService homeService;
 
     @GetMapping("/home")
-    @CrossOrigin(origins = {"http://10.16.105.65:7000", "http://localhost:7000/"})
+
     public Result homeArticles() {
 
         //调用service
@@ -23,7 +23,7 @@ public class HomeController {
     }
 
     @GetMapping("/home/{articlesId}")
-    @CrossOrigin(origins = {"http://10.16.105.65:7000", "http://localhost:7000/"})
+
     public Result homeArticlesbyarticleId(@PathVariable int articlesId) {
 
         //调用service
@@ -32,7 +32,7 @@ public class HomeController {
     }
 
     @PostMapping("/home/{categoryId}")
-    @CrossOrigin(origins = {"http://10.16.105.65:7000", "http://localhost:7000/"})
+
     public Result homeArticlesbycategoryId(@PathVariable int categoryId) {
 
         //调用service

@@ -3,6 +3,7 @@ package com.hejmls.service.impl;
 import com.hejmls.mapper.ReplyMapper;
 import com.hejmls.pojo.Replies;
 import com.hejmls.pojo.Result;
+import com.hejmls.pojo.VO.RepliesVO;
 import com.hejmls.service.ReplyService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Mapper;
@@ -21,8 +22,8 @@ public class ReplyServiceImpl implements ReplyService {
     }
 
     @Override
-    public List<Replies> selectResult(int articleId) {
-        List<Replies> replies = replyMapper.selectResult(articleId);
+    public List<RepliesVO> selectResult(int articleId) {
+        List<RepliesVO> replies = replyMapper.selectResult(articleId);
         return replies;
     }
 }

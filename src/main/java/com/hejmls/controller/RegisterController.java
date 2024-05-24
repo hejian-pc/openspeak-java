@@ -14,7 +14,7 @@ public class RegisterController {
     @Autowired
     RegisterService registerService;
     @PostMapping("/register")
-    @CrossOrigin(origins = {"http://10.16.105.65:7000", "http://localhost:7000/"})
+
     public Result register(@RequestBody User user){
         registerService.insertUser(user);
         return Result.success();
