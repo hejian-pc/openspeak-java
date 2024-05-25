@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hejmls.mapper.CategoriesMapper">
+
+    <insert id="insert">
+        insert into articles (user_id, category_id, title, content, publish_date, last_updated_date)
+        values (#{userId},#{categoryId},#{title},#{content},now(),now())
+    </insert>
+    <insert id="insertCate">
+        insert into categories (category_name, category_description) VALUES
+        (#{categoryName},#{categoryDescription})
+    </insert>
+</mapper>
