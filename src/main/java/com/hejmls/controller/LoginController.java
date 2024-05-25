@@ -1,12 +1,14 @@
 package com.hejmls.controller;
 
 
+import com.hejmls.exception.PasswordErrorException;
 import com.hejmls.pojo.Result;
 import com.hejmls.pojo.User;
 import com.hejmls.service.UserService;
 import com.hejmls.utils.JwtUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -25,6 +27,7 @@ public class LoginController {
         log.info("用户名+密码：{},{}", user.getUsername(),user.getPassword());
 
         User u = userService.login(user);
+
         //登录成功，生成令牌
         if(u!=null){
             Map<String,Object> claims = new HashMap<>();

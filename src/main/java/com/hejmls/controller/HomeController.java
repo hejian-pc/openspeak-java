@@ -2,6 +2,7 @@ package com.hejmls.controller;
 
 import com.hejmls.pojo.Article;
 import com.hejmls.pojo.Result;
+import com.hejmls.pojo.VO.ArticleVO;
 import com.hejmls.service.HomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class HomeController {
     public Result homeArticles() {
 
         //调用service
-        List<Article> articles = homeService.homeArticle();
+        List<ArticleVO> articles = homeService.homeArticle();
         return Result.success(articles);
     }
 
@@ -27,7 +28,7 @@ public class HomeController {
     public Result homeArticlesbyarticleId(@PathVariable int articlesId) {
 
         //调用service
-        List<Article> article = homeService.homeArticlebyarticlesId(articlesId);
+        List<ArticleVO> article = homeService.homeArticlebyarticlesId(articlesId);
         return Result.success(article);
     }
 
@@ -36,7 +37,7 @@ public class HomeController {
     public Result homeArticlesbycategoryId(@PathVariable int categoryId) {
 
         //调用service
-        List<Article> article = homeService.homeArticlebycategoryId(categoryId);
+        List<ArticleVO> article = homeService.homeArticlebycategoryId(categoryId);
         return Result.success(article);
     }
 
