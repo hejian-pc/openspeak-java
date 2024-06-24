@@ -13,6 +13,7 @@ public class JwtUtils {
     //过期时间
     private static Long expire = 43200000L;
     public static String generateJwt(Map<String,Object> claims){
+
         String jwt = Jwts.builder()
                 .addClaims(claims)
                 .signWith(SignatureAlgorithm.HS256,signKey)//签名算法
@@ -20,6 +21,8 @@ public class JwtUtils {
                 .compact() ;
         return jwt;
     }
+
+    //
     public static Claims parseJWT(String jwt){
         Claims claims = Jwts.parser()
                 .setSigningKey(signKey)

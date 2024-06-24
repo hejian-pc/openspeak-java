@@ -17,6 +17,7 @@ import java.util.Map;
 
 @Slf4j
 @RestController
+
 public class LoginController {
     @Autowired
     UserService userService;
@@ -25,9 +26,8 @@ public class LoginController {
     public Result login(@RequestBody User user){
 
         log.info("用户名+密码：{},{}", user.getUsername(),user.getPassword());
-
+        user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));
         User u = userService.login(user);
-
         //登录成功，生成令牌
         if(u!=null){
             Map<String,Object> claims = new HashMap<>();
@@ -46,6 +46,13 @@ public class LoginController {
     public Result selectUser(@PathVariable String username){
         User u = userService.selectUser(username);
         return Result.success(u);
+    }
+
+    @PostMapping("/user/update")
+    public Result update(@RequestBody User user){
+        userService.update(user);
+        return Result.success();
+
     }
 
 

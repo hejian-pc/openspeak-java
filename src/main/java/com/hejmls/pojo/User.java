@@ -18,4 +18,5 @@ public class User {
     //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date registrationDate;
     private String otherInfo;
+    private String image;
 }

@@ -74,6 +74,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>
+        <!-- jwt令牌相关依赖      -->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
@@ -85,10 +86,18 @@
             <version>3.12.0</version> <!-- 这里的版本号可以根据你的需求进行调整 -->
         </dependency>
         <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.4.6</version>
+        </dependency>
+        <!--用于 Java 平台的 JSON 处理库-->
+        <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.83</version>
         </dependency>
+
+        <!-- aliyun-sdk-oss 是阿里云对象存储服务（OSS）的 Java SDK，它提供了与阿里云 OSS 进行交互的各种 API 和工具。-->
         <dependency>
             <groupId>com.aliyun.oss</groupId>
             <artifactId>aliyun-sdk-oss</artifactId>
@@ -99,6 +108,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+
 
     </dependencies>
 
