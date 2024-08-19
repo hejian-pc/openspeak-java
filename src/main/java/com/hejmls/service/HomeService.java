@@ -1,5 +1,6 @@
 package com.hejmls.service;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hejmls.pojo.Article;
 import com.hejmls.pojo.VO.ArticleVO;
 

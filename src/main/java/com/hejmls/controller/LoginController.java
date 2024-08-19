@@ -6,6 +6,7 @@ import com.hejmls.pojo.Result;
 import com.hejmls.pojo.User;
 import com.hejmls.service.UserService;
 import com.hejmls.utils.JwtUtils;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
@@ -17,10 +18,11 @@ import java.util.Map;
 
 @Slf4j
 @RestController
-
+@RequiredArgsConstructor
 public class LoginController {
+
     @Autowired
-    UserService userService;
+    private final UserService userService;
     @PostMapping("/login")
 
     public Result login(@RequestBody User user){
