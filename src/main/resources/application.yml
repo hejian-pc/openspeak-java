@@ -1,0 +1,42 @@
+# 数据库连接配置
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/openspeak
+    username: root
+    password: 123456
+    #jdbc:mysql://47.113.200.210:3306/openspeak
+    #heM17861275979.
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL5Dialect
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+
+
+# MyBatis 配置
+mybatis:
+  configuration:
+    #输出到控制台
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 驼峰命名自动映射
+    map-underscore-to-camel-case: true
+server:
+  port: 8080
+aliyun:
+   oss:
+    endpoint: oss-cn-chengdu.aliyuncs.com
+    access-key-id: ###
+    access-key-secret: ###
+    bucket-name: openspeak
+
+mybatis-plus:
+  mapper-locations: "classpath*:/mapper/*.xml" # Mapper.xml文件地址，当前这个是默认值。
+
+
